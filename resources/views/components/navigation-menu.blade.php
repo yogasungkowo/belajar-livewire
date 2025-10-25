@@ -10,8 +10,8 @@
                 <x-navigation-link :href="route('home')" :active="request()->routeIs('home')">
                     Home
                 </x-navigation-link>
-                <x-navigation-link :href="route('posts.index')" :active="request()->routeIs('posts.*')">
-                    Posts
+                <x-navigation-link :href="route('timeline')" :active="request()->routeIs('timeline')">
+                    Timeline
                 </x-navigation-link>
             </ul>
 

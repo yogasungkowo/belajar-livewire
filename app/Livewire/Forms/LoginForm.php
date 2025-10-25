@@ -32,7 +32,7 @@ class LoginForm extends Form
             'password' => $this->password,
         ])) {   
             session()->regenerate();
-            return redirect()->to('/posts');
+            return redirect()->to('/');
         }
 
         $this->addError('email', 'The provided credentials do not match our records.');

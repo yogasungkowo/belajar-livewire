@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Posts;
 
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 
@@ -9,8 +10,17 @@ use Livewire\Attributes\Title;
 
 class Index extends Component
 {
+    #[On('postCreated')]
+    public function updateList($post)
+    {
+        // Handle the event when a post is created
+    }
     public function render()
     {
-        return view('livewire.posts.index');
+        $posts = \App\Models\Post::latest()->with('user')->get();
+
+        return view('livewire.posts.index', [
+            'posts' => $posts,
+        ]);
     }
 }
